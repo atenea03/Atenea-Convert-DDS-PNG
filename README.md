@@ -9,7 +9,7 @@ Convert images between **DDS** and **PNG**, keeping the folder structure and gen
 ### Steps to use:
 
 1. **Open the program**
-
+   * You will need to extract the entire _INTERNAL.ZIP folder and place it in the main folder with the rest of the files.
    * Double-click on `ate_dds_png.exe`.
    * The main window will open with a black background and the Atenea logo.
 
