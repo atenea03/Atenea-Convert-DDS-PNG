@@ -1,1 +1,42 @@
-# Atenea-Convert-DDS-PNG
+# Quick Guide – Atenea Convert DDS ↔ PNG
+
+**Purpose of the program:**
+Convert images between **DDS** and **PNG**, keeping the folder structure and generating valid files for editing or use in games.
+
+### Steps to use:
+
+1. **Open the program**
+
+   * Double-click on `ate_dds_png.exe`.
+   * The main window will open with a black background and the Atenea logo.
+
+2. **Select input folder**
+
+   * Click **“Select folder”** under **Input folder**.
+   * You can choose **any folder**, even if it contains other types of files.
+   * The program will automatically process only the relevant files based on the format you want:
+
+     * To convert to PNG → it will process **DDS** files.
+     * To convert to DDS → it will process **PNG** files.
+
+3. **Select output folder**
+
+   * Click **“Select folder”** under **Output folder**.
+   * You can choose **any folder**, and the converted files will be saved there, preserving subfolder structure.
+
+4. **Choose output format**
+
+   * In **Output format**, select:
+
+     * **PNG** → to convert DDS to PNG.
+     * **DDS** → to convert PNG to DDS.
+
+5. **Start conversion**
+
+   * Click **Convert**.
+   * The program will process all valid files in the input folder.
+   * When finished, a message will appear: **“Conversion complete”**.
+
+**IMAGES:**
+
+![1](https://i.imgur.com/4p85lPk.png)
