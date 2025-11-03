@@ -19,7 +19,6 @@ app.geometry(f"{int(700*vmin)}x{int(480*vmin)}")
 base_path = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
 ico_path = os.path.join(base_path, "logo.ico")
 png_path = os.path.join(base_path, "logo.png")
-texconv_path = os.path.join(base_path, "texconv.exe")
 
 # --- Window icon ---
 if os.path.exists(png_path):
@@ -107,13 +106,15 @@ def convert_images():
     if not os.path.exists(out_folder):
         os.makedirs(out_folder)
 
-    # Determine input extension based on target format
     input_ext = ".dds" if fmt == "PNG" else ".png"
     files_to_convert = [os.path.join(r,f) for r,d,files in os.walk(in_folder) for f in files if f.lower().endswith(input_ext)]
 
     if not files_to_convert:
         messagebox.showinfo("No files", f"No {input_ext.upper()} files were found in the selected folder.")
         return
+
+    # Determine the correct path to texconv.exe inside exe
+    texconv_full_path = os.path.join(getattr(sys, "_MEIPASS", os.path.dirname(sys.executable)), "texconv.exe")
 
     for file_path in files_to_convert:
         try:
@@ -125,11 +126,11 @@ def convert_images():
             if fmt == "PNG":
                 Image.open(file_path).save(os.path.join(out_path, base_name+".png"), "PNG")
             elif fmt == "DDS":
-                if not os.path.exists(texconv_path):
-                    messagebox.showerror("Error", "texconv.exe not found! Make sure it's in the same folder as this script or exe.")
+                if not os.path.exists(texconv_full_path):
+                    messagebox.showerror("Error", "texconv.exe not found! Make sure it's included with the exe.")
                     return
                 subprocess.run(
-                    [texconv_path, "-f", "DXT5", "-o", out_path, file_path],
+                    [texconv_full_path, "-f", "R8G8B8A8_UNORM", "-srgb", "-y", "-o", out_path, file_path],
                     check=True,
                     creationflags=subprocess.CREATE_NO_WINDOW
                 )
