@@ -3,6 +3,9 @@
 **Purpose of the program:**
 Convert images between **DDS** and **PNG**, keeping the folder structure and generating valid files for editing or use in games.
 
+
+!!!NEVER DELETE ANY OF THE FOLDERS!!!!
+
 ### Steps to use:
 
 1. **Open the program**
