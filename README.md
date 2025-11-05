@@ -42,4 +42,4 @@ Convert images between **DDS** and **PNG**, keeping the folder structure and gen
 
 **IMAGES:**
 
-![1](https://i.imgur.com/4p85lPk.png)
+![1](https://i.imgur.com/HBBA1HF.png)
